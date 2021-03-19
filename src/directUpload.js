@@ -27,7 +27,7 @@ export default ({ directUploadsUrl, file, headers }, onStatusChange) => {
 
     const fileData = RNFetchBlob.wrap(file.path);
 
-    task = RNFetchBlob.fetch('PUT', url, uploadHeaders, fileData)
+    task = RNFetchBlob.fetch('POST', url, uploadHeaders, fileData)
 
     task
       .uploadProgress({ interval: 250 }, (count, total) => {
